@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbox - Srujan Rothe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🤖</text></svg>">
+
+</head>
+<body>
+    <div id="card" class="card">
+        <div class="header"><h1>🤖 AI Chatbox</h1></div>
+        <div class="chatbox" id="cb">
+            <div class="user message" id="user">Hello!!!</div>
+            <div class="bot message" id="bot">Hello! I'm your AI assistant. How can I help you today?</div>
+        </div>
+        <div class="input-area">
+            <input type="text" class="input" id="input"  placeholder="Type something...">
+            <button id="btn" onclick="send()" class="btn">Send</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
