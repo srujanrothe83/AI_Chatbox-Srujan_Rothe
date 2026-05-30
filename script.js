@@ -83,9 +83,11 @@ function saved() {
 }
 function load() {
     const savedchat = localStorage.getItem("savedchat");
+
+    console.log("Saved chat:", savedchat);
+
     if (savedchat) {
         chatbox.innerHTML = savedchat;
-        chatbox.scrollTop = chatbox.scrollHeight;
     }
 }
 window.onload = () => {
