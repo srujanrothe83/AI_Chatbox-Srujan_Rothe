@@ -90,9 +90,9 @@ function load() {
         chatbox.innerHTML = savedchat;
     }
 }
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
     load();
-}
+});
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         send();
