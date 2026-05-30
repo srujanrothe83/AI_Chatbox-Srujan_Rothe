@@ -10,49 +10,36 @@ function addmessage(chat, classname) {
 }
 
 async function getbotreply(chat) {
-
     try {
 
         const response = await fetch(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCKz8rYR_H3j9UWaKzMRPbHmjM2xMJTvf8",
+            "http://localhost:3000/chat",
             {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    contents: [
-                        {
-                            parts: [
-                                {
-                                    text: chat
-                                }
-                            ]
-                        }
-                    ]
+                    message: chat
                 })
             }
         );
 
         const data = await response.json();
 
-        console.log(data);
-
         if (!response.ok) {
             return `Error ${response.status}`;
         }
 
-        return data.candidates[0].content.parts[0].text;
+        return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
 
-    }
-    catch (error) {
+    } catch (error) {
 
         console.error(error);
 
         return "Something went wrong!";
     }
 }
-
 function showTyping() {
 
     const typingDiv = document.createElement("div");
@@ -101,9 +88,9 @@ function load() {
         chatbox.scrollTop = chatbox.scrollHeight;
     }
 }
-window.onload = () => {
-    load()
-}
+// window.onload = () => {
+//     load()
+// }
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         send();
