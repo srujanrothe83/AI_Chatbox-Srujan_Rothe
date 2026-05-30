@@ -13,7 +13,7 @@ async function getbotreply(chat) {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/chat",
+            "https://ai-chatbox-srujan-rothe.onrender.com/chat",
             {
                 method: "POST",
                 headers: {
