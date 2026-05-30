@@ -88,9 +88,9 @@ function load() {
         chatbox.scrollTop = chatbox.scrollHeight;
     }
 }
-// window.onload = () => {
-//     load()
-// }
+window.onload = () => {
+    load();
+}
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         send();
